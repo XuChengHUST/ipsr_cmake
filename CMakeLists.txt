@@ -12,7 +12,7 @@ project(
 
 add_library(
     ipsr_lib OBJECT
-    src/PlyFile.cpp
+    Src/PlyFile.cpp
 )
 
 target_include_directories(
@@ -25,7 +25,7 @@ target_compile_features(ipsr_lib PUBLIC cxx_std_11)
 
 # ---- Declare executable ----
 
-add_executable(ipsr_exe src/main.cpp)
+add_executable(ipsr_exe Src/main.cpp)
 add_executable(ipsr::exe ALIAS ipsr_exe)
 
 set_target_properties(
@@ -43,6 +43,6 @@ target_compile_features(ipsr_exe PRIVATE cxx_std_11)
 target_include_directories(
     ipsr_exe
     PUBLIC
-    "$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/src>"
+    "$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/Src>"
 )
 target_link_libraries(ipsr_exe PRIVATE ipsr_lib)
