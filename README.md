@@ -8,10 +8,19 @@ Iterative Poisson Surface Reconstruction (iPSR) for Unoriented Points
 iPSR extends the popular Poisson Surface Reconstruction ([https://github.com/mkazhdan/PoissonRecon](https://github.com/mkazhdan/PoissonRecon)). iPSR has no more need of oriented normals as input, but infers the normals in an iterative manner. It is used to reconstruct surface from only points input.  
 [project page](https://lcs.ios.ac.cn/~houf/pages/ipsr/index.html)
 
-### Compilation
-Windows: The code is tested by Visual Studio. The ipsr.vcxproj is an example to configure the project.  
-Linux: The code is tested by GCC and Clang with makefile.  
-Executable: [Win64](https://lcs.ios.ac.cn/~houf/pages/ipsr/iPSR.zip)
+## Compilation (Windows & Linux)
+
+Begin by cloning this repository using the following command:
+```sh
+$ git clone https://github.com/XuChengHUST/ipsr_cmake.git
+$ cd ipsr_cmake
+```
+
+Then, use CMake to build the project: (on Windows, this must be in a [developer command prompt](https://docs.microsoft.com/en-us/cpp/build/building-on-the-command-line?view=msvc-160#developer_command_prompt))
+```sh
+ipsr_cmake$ cmake . -B build
+ipsr_cmake$ cmake --build build --config RelWithDebInfo -j
+```
 
 ### Usage:
 \-\-in &lt;input ply file name&gt;  

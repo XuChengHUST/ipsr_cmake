@@ -14,13 +14,6 @@ add_library(
     ipsr_lib OBJECT
     Src/PlyFile.cpp
 )
-
-target_include_directories(
-    ipsr_lib ${warning_guard}
-    PUBLIC
-    "$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/source>"
-)
-
 target_compile_features(ipsr_lib PUBLIC cxx_std_11)
 
 # ---- Declare executable ----
